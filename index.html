@@ -629,7 +629,6 @@ footer{background:#0F1F14;padding:3rem 5vw 2rem}
     <div>
       <p class="fct">Rechtliches</p>
       <ul class="flinks">
-        <li
         <li><a href="impressum.html" target="_self">Impressum</a></li>
         <li><a href="datenschutz.html" target="_self">Datenschutz</a></li>
         <li><a href="#" onclick="ckReset();return false;">Cookie-Einstellungen</a></li>
@@ -648,4 +647,75 @@ footer{background:#0F1F14;padding:3rem 5vw 2rem}
 <script>
 /* ── NAV ── */
 var nav=document.getElementById('nav');
-fu
+function cs(){nav.classList.toggle('s',window.scrollY>60);}
+window.addEventListener('scroll',cs,{passive:true});
+cs();
+document.getElementById('hbg').addEventListener('click',function(){
+  document.getElementById('mob').classList.toggle('open');
+});
+function cm(){document.getElementById('mob').classList.remove('open');}
+
+/* ── SCROLL REVEAL ── */
+var rvEls=document.querySelectorAll('.rv');
+var rvObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');rvObs.unobserve(e.target);}
+  });
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+rvEls.forEach(function(el){
+  var rect=el.getBoundingClientRect();
+  if(rect.top>window.innerHeight){el.classList.add('animate');rvObs.observe(el);}
+});
+
+/* ── MODALS ── */
+function openModal(id){
+  document.getElementById('modal-'+id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById('modal-'+id).classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e,id){
+  if(e.target===document.getElementById('modal-'+id)){closeModal(id);}
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    ['imp','dse'].forEach(function(id){closeModal(id);});
+    document.body.style.overflow='';
+  }
+});
+
+/* ── COOKIE BANNER ── */
+var CK_KEY = 'cookieConsent';
+var ckBanner = document.getElementById('ck');
+
+function ckShow(){ ckBanner.style.display = 'flex'; }
+function ckHide(){ ckBanner.style.display = 'none'; }
+
+function ckAccept(){
+  localStorage.setItem(CK_KEY, 'accepted');
+  ckHide();
+}
+function ckDecline(){
+  localStorage.setItem(CK_KEY, 'declined');
+  ckHide();
+}
+function ckReset(){
+  localStorage.removeItem(CK_KEY);
+  ckShow();
+}
+
+/* Show banner on first visit — only hide if decision already stored */
+(function(){
+  try {
+    if (!localStorage.getItem(CK_KEY)) {
+      setTimeout(ckShow, 600);
+    }
+  } catch(e) {
+    setTimeout(ckShow, 600);
+  }
+})();
+</script>
+</body>
+</html>
