@@ -252,9 +252,10 @@ footer{background:#0F1F14;padding:3rem 5vw 2rem}
     <h2>Impressum</h2>
     <h3>Angaben gem&auml;&szlig; &sect; 5 TMG</h3>
     <p>
-      <strong>Santana Fruits</strong><br>
-      Inhaber: Kenny Santana<br>
-      Dominikanische Republik<br>
+      <strong>Gauss Export Dominicana E.I.R.L.</strong><br>
+      Lucia Abad No. 6<br>
+      15700 Boca Chica<br>
+      Rep&uacute;blica Dominicana<br>
       E-Mail: <a href="mailto:info@santanafruits.com">info@santanafruits.com</a><br>
       Website: <a href="https://santanafruits.com" target="_blank" rel="noopener">santanafruits.com</a>
     </p>
@@ -313,7 +314,7 @@ footer{background:#0F1F14;padding:3rem 5vw 2rem}
     </p>
     <h3>2. Verantwortliche Stelle</h3>
     <p>
-      <strong>Santana Fruits</strong> (Inhaber: Kenny Santana)<br>
+      <strong>Gauss Export Dominicana E.I.R.L.</strong><br>
       E-Mail: <a href="mailto:info@santanafruits.com">info@santanafruits.com</a>
     </p>
     <h3>EU-Vertreter gem&auml;&szlig; Art. 27 DSGVO</h3>
@@ -582,7 +583,7 @@ footer{background:#0F1F14;padding:3rem 5vw 2rem}
         </div>
       </div>
       <div class="kbtns rv d1">
-        <a href="https://wa.me/4915901865477" class="btn-wa">
+        <a href="https://wa.me/491728555543" class="btn-wa">
           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp schreiben
         </a>
@@ -628,7 +629,8 @@ footer{background:#0F1F14;padding:3rem 5vw 2rem}
     <div>
       <p class="fct">Rechtliches</p>
       <ul class="flinks">
-        <li><a href="#" onclick="openModal('imp');return false;">Impressum</a></li>
+        <li
+        <li><a href="impressum.html">Impressum</a></li>
         <li><a href="#" onclick="openModal('dse');return false;">Datenschutz</a></li>
         <li><a href="#" onclick="ckReset();return false;">Cookie-Einstellungen</a></li>
       </ul>
@@ -637,7 +639,7 @@ footer{background:#0F1F14;padding:3rem 5vw 2rem}
   <div class="fbot">
     <p>&#169; 2026 Santana Fruits &#183; Alle Rechte vorbehalten</p>
     <div class="fleg">
-      <a href="#" onclick="openModal('imp');return false;">Impressum</a>
+      <a href="impressum.html">Impressum</a>
       <a href="#" onclick="openModal('dse');return false;">Datenschutzerkl&#228;rung</a>
     </div>
   </div>
@@ -649,4 +651,51 @@ var nav=document.getElementById('nav');
 function cs(){nav.classList.toggle('s',window.scrollY>60);}
 window.addEventListener('scroll',cs,{passive:true});
 cs();
-document.getElementById('hbg').addEventListener('click',function(){do
+document.getElementById('hbg').addEventListener('click',function(){document.getElementById('mob').classList.toggle('open');});
+function cm(){document.getElementById('mob').classList.remove('open');}
+
+/* ── SCROLL REVEAL ── */
+var rvEls=document.querySelectorAll('.rv');
+var rvObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');rvObs.unobserve(e.target);}
+  });
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+rvEls.forEach(function(el){
+  var rect=el.getBoundingClientRect();
+  if(rect.top>window.innerHeight){el.classList.add('animate');rvObs.observe(el);}
+});
+
+/* ── MODALS ── */
+function openModal(id){
+  document.getElementById('modal-'+id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById('modal-'+id).classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e,id){
+  if(e.target===document.getElementById('modal-'+id)){closeModal(id);}
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    ['imp','dse'].forEach(function(id){closeModal(id);});
+    document.body.style.overflow='';
+  }
+});
+
+/* ── COOKIE BANNER ── */
+var CK_KEY='sf_cookie_consent';
+function ckShow(){document.getElementById('ck').style.display='flex';}
+function ckHide(){document.getElementById('ck').style.display='none';}
+function ckAccept(){localStorage.setItem(CK_KEY,'accepted');ckHide();}
+function ckDecline(){localStorage.setItem(CK_KEY,'declined');ckHide();}
+function ckReset(){localStorage.removeItem(CK_KEY);ckShow();}
+(function(){
+  try{var v=localStorage.getItem(CK_KEY);if(!v){setTimeout(ckShow,800);}}
+  catch(e){setTimeout(ckShow,800);}
+})();
+</script>
+</body>
+</html>
