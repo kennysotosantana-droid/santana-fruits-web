@@ -26,6 +26,7 @@
       background: var(--cream);
       color: var(--text);
       overflow-x: hidden;
+      overflow-y: auto;
     }
 
     /* ─── UTILITIES ─────────────────────────────── */
@@ -728,7 +729,7 @@
     <div class="product-card">
       <div class="product-img" id="img-kaffee">
         <img
-          src="https://cdn.marblism.com/jYMRbRqnYfP.webp"
+          src="https://cdn.marblism.com/2OkJ0H5Dj_b.JPG"
           alt="Auténtico Crema – Santana Fruits Kaffee aus der Dominikanischen Republik"
           loading="lazy"
         />
@@ -1008,10 +1009,11 @@
     <div class="reveal" style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
       <a href="https://wa.me/491728555543" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;gap:0.5rem;background:#25D366;color:#fff;padding:0.75rem 1.6rem;border-radius:50px;font-family:'Jost',sans-serif;font-size:0.88rem;font-weight:500;letter-spacing:0.05em;text-decoration:none;">
-        💬 WhatsApp: +49 172 855 55 43
+        💬 WhatsApp schreiben
       </a>
-      <a href="/cdn-cgi/l/email-protection#caa3a4aca58ab9aba4beaba4abacb8bfa3beb9e4a9a5a7" style="display:inline-flex;align-items:center;gap:0.5rem;border:1.5px solid rgba(200,169,110,0.5);color:var(--gold);padding:0.75rem 1.6rem;border-radius:50px;font-family:'Jost',sans-serif;font-size:0.88rem;font-weight:500;letter-spacing:0.05em;text-decoration:none;">
-        ✉ <span class="__cf_email__" data-cfemail="147d7a727b5467757a60757a757266617d60673a777b79">[email&#160;protected]</span>
+      <a href="mailto:info@santanafruits.com"
+         style="display:inline-flex;align-items:center;gap:0.5rem;border:1.5px solid rgba(200,169,110,0.5);color:var(--gold);padding:0.75rem 1.6rem;border-radius:50px;font-family:'Jost',sans-serif;font-size:0.88rem;font-weight:500;letter-spacing:0.05em;text-decoration:none;">
+        ✉ info@santanafruits.com
       </a>
     </div>
     <div class="signature reveal">— Familie Santana</div>
@@ -1021,14 +1023,24 @@
 <!-- ── FOOTER ── -->
 <footer>
   © 2026 Gauss Export Dominicana E.I.R.L. &nbsp;·&nbsp;
-  <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
-  <a href="datenschutz.html">Datenschutz</a> &nbsp;·&nbsp;
-  <a href="mailto:info@gauss-export.com">info@gauss-export.com</a>
+  <a href="/impressum.html">Impressum</a> &nbsp;·&nbsp;
+  <a href="/datenschutz.html">Datenschutz</a> &nbsp;·&nbsp;
+  <a href="mailto:info@santanafruits.com">info@santanafruits.com</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   /* SCROLL REVEAL */
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
-      if (e.isIn
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
