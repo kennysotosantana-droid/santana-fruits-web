@@ -150,6 +150,12 @@
   .footer-bottom a { color: rgba(255,255,255,.38); transition: color .2s; }
   .footer-bottom a:hover { color: var(--gl); }
   .footer-legal-links { display: flex; gap: 1.5rem; }
+  .footer-social-links { display: flex; gap: 1.5rem; }
+  .footer-social-links a {
+    font-size: .74rem; color: rgba(255,255,255,.54);
+    transition: color .2s;
+  }
+  .footer-social-links a:hover { color: var(--gl); }
   @media (max-width: 860px) {
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .footer-brand { grid-column: 1 / -1; }
@@ -596,6 +602,10 @@
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 Gauss Export Dominicana E.I.R.L. &mdash; Alle Rechte vorbehalten.</span>
+    <nav class="footer-social-links" aria-label="Social Media">
+      <a href="https://www.instagram.com/_kenny_santana_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/kenny.santana.56" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </nav>
     <nav class="footer-legal-links" aria-label="Rechtliche Links">
       <a href="/impressum">Impressum</a>
       <a href="/datenschutz">Datenschutz</a>
