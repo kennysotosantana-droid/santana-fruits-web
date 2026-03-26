@@ -1,988 +1,560 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog &#8211; Santana Fruits &amp; More</title>
-    <meta name="description"
-        content="Kennys pers&ouml;nliche Reise und Fachwissen &uuml;ber Trinitario-Kakao, Arabica-Kaffee und Hass-Avocados &#8211; direkt von Santana Fruits &amp; More." />
-    <link rel="canonical" href="https://santanafruits.com/blog" />
-    <meta property="og:title" content="Blog &#8211; Santana Fruits &amp; More" />
-    <meta property="og:description" content="Kennys Reise und Expertenwissen &uuml;ber Kakao &amp; Avocado." />
-    <meta property="og:image" content="https://cdn.marblism.com/7iuCRPQL0YB.webp" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://santanafruits.com/blog" />
-    <link rel="icon" href="https://cdn.marblism.com/_2YtWW7TNgu.png" />
-    <style>
-        /* ── Santana Brand Tokens (from live site) ── */
-        :root {
-            --g: #1B7A3E;
-            /* primary green     */
-            --gm: #2A9D5C;
-            /* mid green         */
-            --gl: #3BBD72;
-            /* light green       */
-            --gp: #EAF6EF;
-            /* pale green tint   */
-            --gbg: #F8FBF9;
-            /* page background   */
-            --bd: #D6EAE0;
-            /* border            */
-            --td: #0F1F14;
-            /* text dark         */
-            --tm: #2D4A38;
-            /* text mid          */
-            --ts: #5A7A66;
-            /* text soft         */
-            --w: #FFFFFF;
-            --r-sm: 8px;
-            --r-md: 14px;
-            --r-lg: 20px;
-            --r-xl: 28px;
-            --r-f: 999px;
-            --sh-xs: 0 1px 4px rgba(15, 31, 20, .06);
-            --sh-sm: 0 2px 12px rgba(15, 31, 20, .08);
-            --sh-md: 0 8px 32px rgba(15, 31, 20, .10);
-            --sh-lg: 0 20px 64px rgba(15, 31, 20, .14);
-            --max: 1220px;
-            --nav-h: 70px;
-        }
-
-        /* ── Reset ── */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background: var(--gbg);
-            color: var(--td);
-            line-height: 1.65;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        button {
-            font-family: inherit;
-            cursor: pointer;
-        }
-
-        /* ── Navigation ── */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 300;
-            height: var(--nav-h);
-            background: rgba(10, 25, 15, .88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, .07);
-        }
-
-        .nav-in {
-            max-width: var(--max);
-            margin: 0 auto;
-            height: 100%;
-            padding: 0 clamp(1rem, 4vw, 2.5rem);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .nav-logo img {
-            height: 44px;
-            width: auto;
-            display: block;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: clamp(1.5rem, 3vw, 2.25rem);
-        }
-
-        .nav-links a {
-            font-size: .84rem;
-            font-weight: 500;
-            letter-spacing: .01em;
-            color: rgba(255, 255, 255, .78);
-            transition: color .2s;
-        }
-
-        .nav-links a:hover {
-            color: #fff;
-        }
-
-        .nav-links a.active {
-            color: var(--gl);
-        }
-
-        .nav-cta {
-            background: var(--g);
-            color: #fff !important;
-            padding: .44rem 1.25rem;
-            border-radius: var(--r-f);
-            font-weight: 600 !important;
-            font-size: .84rem !important;
-            transition: background .2s !important;
-            white-space: nowrap;
-        }
-
-        .nav-cta:hover {
-            background: var(--gm) !important;
-        }
-
-        .nav-burger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            padding: 6px;
-            background: none;
-            border: none;
-        }
-
-        .nav-burger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: rgba(255, 255, 255, .82);
-            border-radius: 2px;
-            transition: transform .3s, opacity .3s;
-        }
-
-        .nav-burger.open span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .nav-burger.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-burger.open span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        @media (max-width: 720px) {
-            .nav-burger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                inset: var(--nav-h) 0 0 0;
-                background: rgba(10, 25, 15, .97);
-                flex-direction: column;
-                justify-content: center;
-                gap: 2.25rem;
-                transform: translateX(100%);
-                transition: transform .32s cubic-bezier(.4, 0, .2, 1);
-                pointer-events: none;
-            }
-
-            .nav-links.open {
-                transform: translateX(0);
-                pointer-events: all;
-            }
-
-            .nav-links a {
-                font-size: 1.05rem;
-                letter-spacing: .04em;
-            }
-        }
-
-        /* ── Footer ── */
-        .footer {
-            background: var(--td);
-            padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem) 2rem;
-        }
-
-        .footer-grid {
-            max-width: var(--max);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: clamp(2rem, 4vw, 3.5rem);
-            padding-bottom: 2.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, .07);
-        }
-
-        .footer-brand img {
-            height: 40px;
-            width: auto;
-            margin-bottom: 1.1rem;
-        }
-
-        .footer-brand p {
-            font-size: .82rem;
-            color: rgba(255, 255, 255, .42);
-            line-height: 1.75;
-            max-width: 280px;
-        }
-
-        .footer-col h5 {
-            font-size: .68rem;
-            font-weight: 700;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .32);
-            margin-bottom: 1rem;
-        }
-
-        .footer-col li+li {
-            margin-top: .5rem;
-        }
-
-        .footer-col a {
-            font-size: .83rem;
-            color: rgba(255, 255, 255, .54);
-            transition: color .2s;
-        }
-
-        .footer-col a:hover {
-            color: var(--gl);
-        }
-
-        .footer-bottom {
-            max-width: var(--max);
-            margin: 2rem auto 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: .75rem;
-            font-size: .74rem;
-            color: rgba(255, 255, 255, .26);
-        }
-
-        .footer-bottom a {
-            color: rgba(255, 255, 255, .38);
-            transition: color .2s;
-        }
-
-        .footer-bottom a:hover {
-            color: var(--gl);
-        }
-
-        .footer-legal-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 860px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-        /* ── Panorama ── */
-        .panorama {
-            position: relative;
-            width: 100%;
-            height: clamp(360px, 54vw, 640px);
-            overflow: hidden;
-        }
-
-        .panorama>img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 35%;
-        }
-
-        .panorama-scrim {
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(to right, rgba(10, 25, 15, .75) 0%, rgba(10, 25, 15, .28) 60%, transparent 100%),
-                linear-gradient(to top, rgba(10, 25, 15, .60) 0%, transparent 55%);
-        }
-
-        .panorama-body {
-            position: absolute;
-            bottom: clamp(2.5rem, 8vw, 5rem);
-            left: clamp(1.5rem, 6vw, 4rem);
-            max-width: min(640px, 90vw);
-        }
-
-        .pan-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: .55rem;
-            font-size: .72rem;
-            font-weight: 700;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: var(--gl);
-            margin-bottom: 1rem;
-        }
-
-        .pan-eyebrow::before {
-            content: '';
-            display: block;
-            width: 28px;
-            height: 1.5px;
-            background: var(--gl);
-        }
-
-        .pan-title {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2.4rem, 5.5vw, 4.5rem);
-            font-weight: 700;
-            line-height: 1.07;
-            color: #fff;
-            text-shadow: 0 2px 32px rgba(0, 0, 0, .35);
-            margin-bottom: 1rem;
-        }
-
-        .pan-sub {
-            font-size: clamp(.9rem, 2vw, 1.1rem);
-            color: rgba(255, 255, 255, .72);
-            line-height: 1.6;
-            max-width: 520px;
-        }
-
-        /* ── Filter bar ── */
-        .filter-bar {
-            background: var(--w);
-            border-bottom: 1px solid var(--bd);
-            position: sticky;
-            top: var(--nav-h);
-            z-index: 100;
-        }
-
-        .filter-bar-in {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 0 clamp(1rem, 4vw, 2.5rem);
-            height: 60px;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-
-        .filter-bar-in::-webkit-scrollbar {
-            display: none;
-        }
-
-        .fp {
-            flex-shrink: 0;
-            display: inline-flex;
-            align-items: center;
-            gap: .4rem;
-            font-size: .8rem;
-            font-weight: 500;
-            padding: .44rem 1.1rem;
-            border-radius: var(--r-f);
-            border: 1.5px solid var(--bd);
-            color: var(--ts);
-            background: transparent;
-            transition: all .2s;
-            white-space: nowrap;
-        }
-
-        .fp:hover {
-            border-color: var(--g);
-            color: var(--g);
-        }
-
-        .fp.fa {
-            background: var(--td);
-            border-color: var(--td);
-            color: #fff;
-        }
-
-        .fp.fj {
-            background: var(--g);
-            border-color: var(--g);
-            color: #fff;
-        }
-
-        .fp.fe {
-            background: var(--tm);
-            border-color: var(--tm);
-            color: #fff;
-        }
-
-        /* ── Section ── */
-        .blog-section {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem) clamp(4rem, 8vw, 7rem);
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .section-header h2 {
-            font-family: Georgia, serif;
-            font-size: clamp(1.25rem, 2.5vw, 1.65rem);
-            font-weight: 700;
-            color: var(--td);
-            white-space: nowrap;
-        }
-
-        .section-line {
-            flex: 1;
-            height: 1px;
-            background: var(--bd);
-        }
-
-        /* ── Grid ── */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: clamp(1.25rem, 2.5vw, 2rem);
-        }
-
-        .grid--section {
-            margin-bottom: clamp(3rem, 6vw, 5rem);
-        }
-
-        .grid--section:last-child {
-            margin-bottom: 0;
-        }
-
-        /* ── Card
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog &#8211; Santana Fruits &amp; More</title>
+  <meta name="description" content="Kennys pers&ouml;nliche Reise und Fachwissen &uuml;ber Trinitario-Kakao, Arabica-Kaffee und Hass-Avocados &#8211; direkt von Santana Fruits &amp; More." />
+  <link rel="canonical" href="https://santanafruits.com/blog" />
+  <meta property="og:title"       content="Blog &#8211; Santana Fruits &amp; More" />
+  <meta property="og:description" content="Kennys Reise und Expertenwissen &uuml;ber Kakao &amp; Avocado." />
+  <meta property="og:image"       content="https://cdn.marblism.com/7iuCRPQL0YB.webp" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://santanafruits.com/blog" />
+  <link rel="icon" href="https://cdn.marblism.com/_2YtWW7TNgu.png" />
+  <style>
+  /* ── Santana Brand Tokens (from live site) ── */
+  :root {
+    --g:     #1B7A3E;   /* primary green     */
+    --gm:    #2A9D5C;   /* mid green         */
+    --gl:    #3BBD72;   /* light green       */
+    --gp:    #EAF6EF;   /* pale green tint   */
+    --gbg:   #F8FBF9;   /* page background   */
+    --bd:    #D6EAE0;   /* border            */
+    --td:    #0F1F14;   /* text dark         */
+    --tm:    #2D4A38;   /* text mid          */
+    --ts:    #5A7A66;   /* text soft         */
+    --w:     #FFFFFF;
+    --r-sm:  8px;
+    --r-md:  14px;
+    --r-lg:  20px;
+    --r-xl:  28px;
+    --r-f:   999px;
+    --sh-xs: 0 1px 4px  rgba(15,31,20,.06);
+    --sh-sm: 0 2px 12px rgba(15,31,20,.08);
+    --sh-md: 0 8px 32px rgba(15,31,20,.10);
+    --sh-lg: 0 20px 64px rgba(15,31,20,.14);
+    --max:   1220px;
+    --nav-h: 70px;
+  }
+  /* ── Reset ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html  { scroll-behavior: smooth; font-size: 16px; }
+  body  {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--gbg);
+    color: var(--td);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  img   { display: block; max-width: 100%; height: auto; }
+  a     { color: inherit; text-decoration: none; }
+  ul    { list-style: none; }
+  button { font-family: inherit; cursor: pointer; }
+  /* ── Navigation ── */
+  .nav {
+    position: sticky; top: 0; z-index: 300;
+    height: var(--nav-h);
+    background: rgba(10, 25, 15, .88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .nav-in {
+    max-width: var(--max);
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 clamp(1rem,4vw,2.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .nav-logo img { height: 44px; width: auto; display: block; }
+  .nav-links { display: flex; align-items: center; gap: clamp(1.5rem,3vw,2.25rem); }
+  .nav-links a {
+    font-size: .84rem; font-weight: 500; letter-spacing: .01em;
+    color: rgba(255,255,255,.78); transition: color .2s;
+  }
+  .nav-links a:hover  { color: #fff; }
+  .nav-links a.active { color: var(--gl); }
+  .nav-cta {
+    background: var(--g); color: #fff !important;
+    padding: .44rem 1.25rem; border-radius: var(--r-f);
+    font-weight: 600 !important; font-size: .84rem !important;
+    transition: background .2s !important; white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--gm) !important; }
+  .nav-burger {
+    display: none; flex-direction: column; gap: 5px;
+    padding: 6px; background: none; border: none;
+  }
+  .nav-burger span {
+    display: block; width: 22px; height: 2px;
+    background: rgba(255,255,255,.82); border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (max-width: 720px) {
+    .nav-burger { display: flex; }
+    .nav-links {
+      position: fixed; inset: var(--nav-h) 0 0 0;
+      background: rgba(10,25,15,.97);
+      flex-direction: column; justify-content: center;
+      gap: 2.25rem;
+      transform: translateX(100%);
+      transition: transform .32s cubic-bezier(.4,0,.2,1);
+      pointer-events: none;
+    }
+    .nav-links.open { transform: translateX(0); pointer-events: all; }
+    .nav-links a { font-size: 1.05rem; letter-spacing: .04em; }
+  }
+  /* ── Footer ── */
+  .footer {
+    background: var(--td);
+    padding: clamp(3rem,6vw,5rem) clamp(1rem,4vw,2.5rem) 2rem;
+  }
+  .footer-grid {
+    max-width: var(--max); margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: clamp(2rem,4vw,3.5rem);
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .footer-brand img { height: 40px; width: auto; margin-bottom: 1.1rem; }
+  .footer-brand p {
+    font-size: .82rem; color: rgba(255,255,255,.42);
+    line-height: 1.75; max-width: 280px;
+  }
+  .footer-col h5 {
+    font-size: .68rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: rgba(255,255,255,.32);
+    margin-bottom: 1rem;
+  }
+  .footer-col li + li { margin-top: .5rem; }
+  .footer-col a {
+    font-size: .83rem; color: rgba(255,255,255,.54);
+    transition: color .2s;
+  }
+  .footer-col a:hover { color: var(--gl); }
+  .footer-bottom {
+    max-width: var(--max); margin: 2rem auto 0;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: .75rem;
+    font-size: .74rem; color: rgba(255,255,255,.26);
+  }
+  .footer-bottom a { color: rgba(255,255,255,.38); transition: color .2s; }
+  .footer-bottom a:hover { color: var(--gl); }
+  .footer-legal-links { display: flex; gap: 1.5rem; }
+  @media (max-width: 860px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+  /* ── Panorama ── */
+  .panorama {
+    position: relative;
+    width: 100%;
+    height: clamp(360px, 54vw, 640px);
+    overflow: hidden;
+  }
+  .panorama > img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+  .panorama-scrim {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to right, rgba(10,25,15,.75) 0%, rgba(10,25,15,.28) 60%, transparent 100%),
+      linear-gradient(to top,   rgba(10,25,15,.60) 0%, transparent 55%);
+  }
+  .panorama-body {
+    position: absolute;
+    bottom: clamp(2.5rem,8vw,5rem);
+    left: clamp(1.5rem,6vw,4rem);
+    max-width: min(640px, 90vw);
+  }
+  .pan-eyebrow {
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-size: .72rem; font-weight: 700; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--gl);
+    margin-bottom: 1rem;
+  }
+  .pan-eyebrow::before {
+    content: ''; display: block;
+    width: 28px; height: 1.5px; background: var(--gl);
+  }
+  .pan-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+    font-weight: 700; line-height: 1.07;
+    color: #fff;
+    text-shadow: 0 2px 32px rgba(0,0,0,.35);
+    margin-bottom: 1rem;
+  }
+  .pan-sub {
+    font-size: clamp(.9rem, 2vw, 1.1rem);
+    color: rgba(255,255,255,.72);
+    line-height: 1.6;
+    max-width: 520px;
+  }
+
+  /* ── Filter bar ── */
+  .filter-bar {
+    background: var(--w);
+    border-bottom: 1px solid var(--bd);
+    position: sticky;
+    top: var(--nav-h);
+    z-index: 100;
+  }
+  .filter-bar-in {
+    max-width: var(--max); margin: 0 auto;
+    padding: 0 clamp(1rem,4vw,2.5rem);
+    height: 60px;
+    display: flex; align-items: center; gap: .5rem;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .filter-bar-in::-webkit-scrollbar { display: none; }
+  .fp {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .8rem; font-weight: 500;
+    padding: .44rem 1.1rem;
+    border-radius: var(--r-f);
+    border: 1.5px solid var(--bd);
+    color: var(--ts); background: transparent;
+    transition: all .2s; white-space: nowrap;
+  }
+  .fp:hover  { border-color: var(--g); color: var(--g); }
+  .fp.fa     { background: var(--td);  border-color: var(--td); color: #fff; }
+  .fp.fj     { background: var(--g);   border-color: var(--g);  color: #fff; }
+  .fp.fe     { background: var(--tm);  border-color: var(--tm); color: #fff; }
+
+  /* ── Section ── */
+  .blog-section {
+    max-width: var(--max); margin: 0 auto;
+    padding: clamp(3rem,6vw,5rem) clamp(1rem,4vw,2.5rem) clamp(4rem,8vw,7rem);
+  }
+  .section-header {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .section-header h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(1.25rem,2.5vw,1.65rem);
+    font-weight: 700; color: var(--td);
+    white-space: nowrap;
+  }
+  .section-line { flex: 1; height: 1px; background: var(--bd); }
+
+  /* ── Grid ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+  .grid--section { margin-bottom: clamp(3rem,6vw,5rem); }
+  .grid--section:last-child { margin-bottom: 0; }
+
+  /* ── Card
    *  STRICT ORDER enforced in HTML:
    *  1. img  2. badge  3. date  4. title  5. excerpt  6. cta
    * ── */
-        .card {
-            display: flex;
-            flex-direction: column;
-            background: var(--w);
-            border-radius: var(--r-lg);
-            border: 1px solid var(--bd);
-            overflow: hidden;
-            box-shadow: var(--sh-sm);
-            transition: transform .26s cubic-bezier(.2, 0, .2, 1),
-                box-shadow .26s cubic-bezier(.2, 0, .2, 1);
-        }
+  .card {
+    display: flex; flex-direction: column;
+    background: var(--w);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--bd);
+    overflow: hidden;
+    box-shadow: var(--sh-sm);
+    transition: transform .26s cubic-bezier(.2,0,.2,1),
+                box-shadow .26s cubic-bezier(.2,0,.2,1);
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sh-lg);
+  }
+  .card--hidden { display: none; }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--sh-lg);
-        }
+  /* 1. IMAGE — safe crop: aspect-ratio keeps full content visible */
+  .card-media {
+    display: block; overflow: hidden;
+    background: var(--gp);
+    aspect-ratio: 3 / 2;
+    flex-shrink: 0;
+  }
+  .card-media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 20%;  /* bias to top – keeps faces/subjects safe */
+    transition: transform .45s cubic-bezier(.2,0,.2,1);
+  }
+  .card:hover .card-media img { transform: scale(1.04); }
 
-        .card--hidden {
-            display: none;
-        }
+  /* 2–6. Card body */
+  .card-body {
+    padding: 1.5rem 1.5rem 1.6rem;
+    flex: 1; display: flex; flex-direction: column;
+  }
 
-        /* 1. IMAGE — safe crop: aspect-ratio keeps full content visible */
-        .card-media {
-            display: block;
-            overflow: hidden;
-            background: var(--gp);
-            aspect-ratio: 3 / 2;
-            flex-shrink: 0;
-        }
+  /* 2. Category badge */
+  .badge {
+    display: inline-flex; align-items: center;
+    padding: .24rem .8rem;
+    border-radius: var(--r-f);
+    font-size: .68rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: .65rem;
+  }
+  .badge--journey  { background: rgba(27,122,62,.10); color: var(--g);  border: 1px solid rgba(27,122,62,.18); }
+  .badge--expertise{ background: rgba(45,74,56,.08);  color: var(--tm); border: 1px solid rgba(45,74,56,.14); }
 
-        .card-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 20%;
-            /* bias to top – keeps faces/subjects safe */
-            transition: transform .45s cubic-bezier(.2, 0, .2, 1);
-        }
+  /* 3. Date */
+  .card-date {
+    font-size: .74rem; color: var(--ts);
+    display: block; margin-bottom: .7rem;
+  }
 
-        .card:hover .card-media img {
-            transform: scale(1.04);
-        }
+  /* 4. Title — full text, no truncation */
+  .card-title {
+    font-family: Georgia, serif;
+    font-size: clamp(1.02rem, 1.8vw, 1.18rem);
+    font-weight: 700; line-height: 1.32;
+    color: var(--td); margin-bottom: .8rem;
+  }
+  .card-title a { transition: color .2s; }
+  .card-title a:hover { color: var(--g); }
 
-        /* 2–6. Card body */
-        .card-body {
-            padding: 1.5rem 1.5rem 1.6rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+  /* 5. Excerpt – max 3 lines */
+  .card-excerpt {
+    font-size: .86rem; color: var(--ts);
+    line-height: 1.65; flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+  }
 
-        /* 2. Category badge */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: .24rem .8rem;
-            border-radius: var(--r-f);
-            font-size: .68rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            width: fit-content;
-            margin-bottom: .65rem;
-        }
+  /* 6. Weiterlesen CTA */
+  .card-cta {
+    display: inline-flex; align-items: center; gap: .35rem;
+    font-size: .8rem; font-weight: 700;
+    color: var(--g); letter-spacing: .02em;
+    margin-top: auto; transition: gap .2s;
+  }
+  .card:hover .card-cta { gap: .6rem; }
+  .card-cta-arrow { font-size: 1rem; }
 
-        .badge--journey {
-            background: rgba(27, 122, 62, .10);
-            color: var(--g);
-            border: 1px solid rgba(27, 122, 62, .18);
-        }
+  /* NEW label */
+  .new-label {
+    display: inline-block;
+    background: var(--g); color: #fff;
+    font-size: .58rem; font-weight: 800;
+    letter-spacing: .1em; text-transform: uppercase;
+    padding: .14rem .55rem; border-radius: var(--r-f);
+    vertical-align: middle; margin-left: .4rem;
+  }
 
-        .badge--expertise {
-            background: rgba(45, 74, 56, .08);
-            color: var(--tm);
-            border: 1px solid rgba(45, 74, 56, .14);
-        }
-
-        /* 3. Date */
-        .card-date {
-            font-size: .74rem;
-            color: var(--ts);
-            display: block;
-            margin-bottom: .7rem;
-        }
-
-        /* 4. Title — full text, no truncation */
-        .card-title {
-            font-family: Georgia, serif;
-            font-size: clamp(1.02rem, 1.8vw, 1.18rem);
-            font-weight: 700;
-            line-height: 1.32;
-            color: var(--td);
-            margin-bottom: .8rem;
-        }
-
-        .card-title a {
-            transition: color .2s;
-        }
-
-        .card-title a:hover {
-            color: var(--g);
-        }
-
-        /* 5. Excerpt – max 3 lines */
-        .card-excerpt {
-            font-size: .86rem;
-            color: var(--ts);
-            line-height: 1.65;
-            flex: 1;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin-bottom: 1.2rem;
-        }
-
-        /* 6. Weiterlesen CTA */
-        .card-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: .35rem;
-            font-size: .8rem;
-            font-weight: 700;
-            color: var(--g);
-            letter-spacing: .02em;
-            margin-top: auto;
-            transition: gap .2s;
-        }
-
-        .card:hover .card-cta {
-            gap: .6rem;
-        }
-
-        .card-cta-arrow {
-            font-size: 1rem;
-        }
-
-        /* NEW label */
-        .new-label {
-            display: inline-block;
-            background: var(--g);
-            color: #fff;
-            font-size: .58rem;
-            font-weight: 800;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            padding: .14rem .55rem;
-            border-radius: var(--r-f);
-            vertical-align: middle;
-            margin-left: .4rem;
-        }
-
-        @media (max-width: 900px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 560px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+</style>
 </head>
-
 <body>
 
 
-    <nav class="nav" aria-label="Hauptnavigation">
-        <div class="nav-in">
-            <a href="/" class="nav-logo" aria-label="Santana Fruits – Startseite">
-                <img src="https://cdn.marblism.com/_2YtWW7TNgu.png" alt="Santana Fruits" loading="eager" />
-            </a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="/#geschichte">Über uns</a></li>
-                <li><a href="/#produkte">Produkte</a></li>
-                <li><a href="/blog" class="active">Blog</a></li>
-                <li><a href="/#medien">Medien</a></li>
-                <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
-            </ul>
-            <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="nav-in">
+    <a href="/" class="nav-logo" aria-label="Santana Fruits – Startseite">
+      <img src="https://cdn.marblism.com/_2YtWW7TNgu.png" alt="Santana Fruits" loading="eager" />
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/#geschichte">Über uns</a></li>
+      <li><a href="/#produkte">Produkte</a></li>
+      <li><a href="/blog" class="active">Blog</a></li>
+      <li><a href="/#medien">Medien</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <!-- ═══════════════ PANORAMA ═══════════════ -->
-    <header>
-        <div class="panorama">
-            <img src="https://cdn.marblism.com/7iuCRPQL0YB.webp"
-                alt="Santana Fruits &#8211; Kakaoplantage in der Dominikanischen Republik" width="1920" height="900"
-                loading="eager" fetchpriority="high" />
-            <div class="panorama-scrim" aria-hidden="true"></div>
-            <div class="panorama-body">
-                <span class="pan-eyebrow">Geschichten &amp; Fachwissen</span>
-                <h1 class="pan-title">Der Santana Blog</h1>
-                <p class="pan-sub">Kennys pers&ouml;nliche Reise und Expertenwissen &uuml;ber Kakao, Kaffee &amp;
-                    Avocado &#8211; direkt von der Plantage nach Europa.</p>
-            </div>
-        </div>
-    </header>
-
-    <!-- ═══════════════ FILTER ═══════════════ -->
-    <div class="filter-bar" role="navigation" aria-label="Kategoriefilter">
-        <div class="filter-bar-in">
-            <button class="fp fa" onclick="doFilter(this,'all')">Alle Artikel</button>
-            <button class="fp" onclick="doFilter(this,'journey')">Kennys Reise</button>
-            <button class="fp" onclick="doFilter(this,'expertise')">Expertise</button>
-        </div>
+<!-- ═══════════════ PANORAMA ═══════════════ -->
+<header>
+  <div class="panorama">
+    <img
+      src="https://cdn.marblism.com/7iuCRPQL0YB.webp"
+      alt="Santana Fruits &#8211; Kakaoplantage in der Dominikanischen Republik"
+      width="1920" height="900"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="panorama-scrim" aria-hidden="true"></div>
+    <div class="panorama-body">
+      <span class="pan-eyebrow">Geschichten &amp; Fachwissen</span>
+      <h1 class="pan-title">Der Santana Blog</h1>
+      <p class="pan-sub">Kennys pers&ouml;nliche Reise und Expertenwissen &uuml;ber Kakao, Kaffee &amp; Avocado &#8211; direkt von der Plantage nach Europa.</p>
     </div>
+  </div>
+</header>
 
-    <!-- ═══════════════ CONTENT ═══════════════ -->
-    <main class="blog-section" id="main">
+<!-- ═══════════════ FILTER ═══════════════ -->
+<div class="filter-bar" role="navigation" aria-label="Kategoriefilter">
+  <div class="filter-bar-in">
+    <button class="fp fa" onclick="doFilter(this,'all')">Alle Artikel</button>
+    <button class="fp"    onclick="doFilter(this,'journey')">Kennys Reise</button>
+    <button class="fp"    onclick="doFilter(this,'expertise')">Expertise</button>
+  </div>
+</div>
 
-        <!-- NEUESTER POST HIER EINFÜGEN -->
+<!-- ═══════════════ CONTENT ═══════════════ -->
+<main class="blog-section" id="main">
 
-        <!-- ── Kennys Reise ── -->
-        <div class="grid--section" id="sec-journey">
-            <div class="section-header">
-                <h2>Kennys Reise</h2>
-                <span class="section-line" aria-hidden="true"></span>
-            </div>
-            <div class="grid">
+  <!-- NEUESTER POST HIER EINFÜGEN -->
 
-                <article class="card" data-cat="journey">
-                    <!-- 1. Image -->
-                    <a href="/blog/rueckkehr-zur-finca.html" class="card-media" tabindex="-1" aria-hidden="true">
-                        <img src="https://cdn.marblism.com/07GXomptgAW.JPG"
-                            alt="Kenny Soto Santana auf einer Kakaoplantage in der Dominikanischen Republik" width="600"
-                            height="400" loading="eager" />
-                    </a>
-                    <div class="card-body">
-                        <!-- 2. Category -->
-                        <span class="badge badge--journey">Kennys Reise</span>
-                        <!-- 3. Date -->
-                        <time class="card-date" datetime="2026-03-01">01. März 2026</time>
-                        <!-- 4. Title -->
-                        <h2 class="card-title">
-                            <a href="/blog/rueckkehr-zur-finca.html">Rückkehr zur Finca: Wie die Vision von Santana
-                                Fruits entstand<span class="new-label">Neu</span></a>
-                        </h2>
-                        <!-- 5. Excerpt -->
-                        <p class="card-excerpt">Erfahren Sie, wie Kennys emotionale Reise in die Dominikanische Republik
-                            und die Begegnung mit Mentor Juan den Grundstein für Santana Fruits & More legten.</p>
-                        <!-- 6. CTA -->
-                        <a href="/blog/rueckkehr-zur-finca.html" class="card-cta">
-                            Weiterlesen <span class="card-cta-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </div>
-                </article>
+  <!-- ── Kennys Reise ── -->
+  <div class="grid--section" id="sec-journey">
+    <div class="section-header">
+      <h2>Kennys Reise</h2>
+      <span class="section-line" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
 
-                <article class="card" data-cat="journey">
-                    <!-- 1. Image -->
-                    <a href="/blog/die-santana-story.html" class="card-media" tabindex="-1" aria-hidden="true">
-                        <img src="https://cdn.marblism.com/8UY1ozCPHSJ.JPG"
-                            alt="Kenny Soto Santana – Gründer von Santana Fruits & More" width="600" height="400"
-                            loading="eager" />
-                    </a>
-                    <div class="card-body">
-                        <!-- 2. Category -->
-                        <span class="badge badge--journey">Kennys Reise</span>
-                        <!-- 3. Date -->
-                        <time class="card-date" datetime="2026-03-08">08. März 2026</time>
-                        <!-- 4. Title -->
-                        <h2 class="card-title">
-                            <a href="/blog/die-santana-story.html">Die Santana Story: Warum ich diesem Geschäft mein
-                                Leben widme</a>
-                        </h2>
-                        <!-- 5. Excerpt -->
-                        <p class="card-excerpt">Ein bewegender Einblick in den schicksalhaften Unfall von 2014, die
-                            letzten Worte eines geliebten Onkels und wie dieses Vermächtnis zur treibenden Kraft wurde.
-                        </p>
-                        <!-- 6. CTA -->
-                        <a href="/blog/die-santana-story.html" class="card-cta">
-                            Weiterlesen <span class="card-cta-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
+    <article class="card" data-cat="journey">
+      <!-- 1. Image -->
+      <a href="/blog/artikel/saturn-moment.html" class="card-media" tabindex="-1" aria-hidden="true">
+        <img
+          src="/blog/assets/images/saturn-moment.jpg"
+          alt="2009 im Saturn: Der Moment, der alles veränderte"
+          width="600" height="400"
+          loading="eager"
+        />
+      </a>
+      <div class="card-body">
+        <!-- 2. Category -->
+        <span class="badge badge--journey">Kennys Reise</span>
+        <!-- 3. Date -->
+        <time class="card-date" datetime="2009-01-01">2009</time>
+        <!-- 4. Title -->
+        <h2 class="card-title">
+          <a href="/blog/artikel/saturn-moment.html">2009 im Saturn: Der Moment, der alles veränderte</a>
+        </h2>
+        <!-- 5. Excerpt -->
+        <p class="card-excerpt">2009 im Saturn, ein Moment unter Neonlicht – und die Frage meiner Tante, die alles verändert hat.</p>
+        <!-- 6. CTA -->
+        <a href="/blog/artikel/saturn-moment.html" class="card-cta">
+          Weiterlesen <span class="card-cta-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+      </div>
+    </article>
 
-        <!-- ── Expertise ── -->
-        <div class="grid--section" id="sec-expertise">
-            <div class="section-header">
-                <h2>Expertise</h2>
-                <span class="section-line" aria-hidden="true"></span>
-            </div>
-            <div class="grid">
+    </div>
+  </div>
 
-                <article class="card" data-cat="expertise">
-                    <!-- 1. Image -->
-                    <a href="/blog/trinitario-kakao.html" class="card-media" tabindex="-1" aria-hidden="true">
-                        <img src="https://cdn.marblism.com/lypQGeP1wf4.webp"
-                            alt="Reife Trinitario-Kakaofrüchte auf der Plantage in El Cibao" width="600" height="400"
-                            loading="eager" />
-                    </a>
-                    <div class="card-body">
-                        <!-- 2. Category -->
-                        <span class="badge badge--expertise">Expertise</span>
-                        <!-- 3. Date -->
-                        <time class="card-date" datetime="2026-03-15">15. März 2026</time>
-                        <!-- 4. Title -->
-                        <h2 class="card-title">
-                            <a href="/blog/trinitario-kakao.html">Trinitario-Kakao: Das Geheimnis unserer begehrten
-                                Bohnen<span class="new-label">Neu</span></a>
-                        </h2>
-                        <!-- 5. Excerpt -->
-                        <p class="card-excerpt">Tauchen Sie ein in die Welt des edlen Trinitario-Kakaos aus der Region
-                            El Cibao und erfahren Sie, was unseren Hispaniola-Standard so besonders macht.</p>
-                        <!-- 6. CTA -->
-                        <a href="/blog/trinitario-kakao.html" class="card-cta">
-                            Weiterlesen <span class="card-cta-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </div>
-                </article>
+  <!-- ── Expertenfachwissen ── -->
+  <div class="grid--section" id="sec-expertise">
+    <div class="section-header">
+      <h2>Expertenfachwissen</h2>
+      <span class="section-line" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+    <!-- Artikel folgen -->
+    </div>
+  </div>
 
-                <article class="card" data-cat="expertise">
-                    <!-- 1. Image -->
-                    <a href="/blog/geheimnis-der-fermentation.html" class="card-media" tabindex="-1" aria-hidden="true">
-                        <img src="https://cdn.marblism.com/VtDNMcro2Q3.JPG"
-                            alt="Kakaobohnen in Fermentationskisten nach der Ernte" width="600" height="400"
-                            loading="eager" />
-                    </a>
-                    <div class="card-body">
-                        <!-- 2. Category -->
-                        <span class="badge badge--expertise">Expertise</span>
-                        <!-- 3. Date -->
-                        <time class="card-date" datetime="2026-03-22">22. März 2026</time>
-                        <!-- 4. Title -->
-                        <h2 class="card-title">
-                            <a href="/blog/geheimnis-der-fermentation.html">Das Geheimnis der Fermentation: Wie aus
-                                bitteren Bohnen Gold wird</a>
-                        </h2>
-                        <!-- 5. Excerpt -->
-                        <p class="card-excerpt">Die wahre Magie passiert nach der Ernte. Erfahren Sie, wie wir durch
-                            präzise Fermentation und Sonnentrocknung das volle Aroma entfalten.</p>
-                        <!-- 6. CTA -->
-                        <a href="/blog/geheimnis-der-fermentation.html" class="card-cta">
-                            Weiterlesen <span class="card-cta-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="card" data-cat="expertise">
-                    <!-- 1. Image -->
-                    <a href="artikel/saturn-moment.html" class="card-media" tabindex="-1" aria-hidden="true">
-                        <<img src="/blog/assets/images/saturn-moment.jpg" alt="Saturn Moment" width="600" height="400">
-                            loading="eager" />
-                    </a>
-                    <div class="card-body">
-                        <!-- 2. Category -->
-                        <span class="badge badge--expertise">Expertise</span>
-                        <!-- 3. Date -->
-                        <time class="card-date" datetime="2026-03-22">22. März 2026</time>
-                        <!-- 4. Title -->
-                        <h2 class="card-title">
-                            <a href="artikel/saturn-moment.html">2009 im Saturn: Der Moment, der alles veränderte
-                        </h2>
-                        <!-- 5. Excerpt -->
-                        <p class="card-excerpt">
-                            2009 im Saturn, ein Moment unter Neonlicht – und die Frage meiner Tante, die alles verändert
-                            hat.
-                        </p>
-                        <!-- 6. CTA -->
-                        <a href="artikel/saturn-moment.html" class="card-cta">
-                            Weiterlesen <span class="card-cta-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="card" data-cat="expertise">
-                    <!-- 1. Image -->
-                    <a href="/blog/vom-feld-bis-zum-hafen.html" class="card-media" tabindex="-1" aria-hidden="true">
-                        <img src="https://cdn.marblism.com/1odyRYmwKjm.webp"
-                            alt="Logistikkarte – Export-Route von der Dominikanischen Republik nach Europa" width="600"
-                            height="400" loading="lazy" />
-                    </a>
-                    <div class="card-body">
-                        <!-- 2. Category -->
-                        <span class="badge badge--expertise">Expertise</span>
-                        <!-- 3. Date -->
-                        <time class="card-date" datetime="2026-03-29">29. März 2026</time>
-                        <!-- 4. Title -->
-                        <h2 class="card-title">
-                            <a href="/blog/vom-feld-bis-zum-hafen.html">Vom Feld bis zum Hafen: Warum wir die Kontrolle
-                                behalten</a>
-                        </h2>
-                        <!-- 5. Excerpt -->
-                        <p class="card-excerpt">Direkthandel ist für uns kein Modewort, sondern die einzige Lösung für
-                            maximale Transparenz und Qualität im Kakao- und Kaffeemarkt.</p>
-                        <!-- 6. CTA -->
-                        <a href="/blog/vom-feld-bis-zum-hafen.html" class="card-cta">
-                            Weiterlesen <span class="card-cta-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-    </main>
+</main>
 
 
-    <footer class="footer" aria-label="Seitenfooter">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.marblism.com/_2YtWW7TNgu.png" alt="Santana Fruits" />
-                <p>Direktimport von erstklassigem Kakao, Kaffee und Avocados aus der Dominikanischen Republik.
-                    Transparenz, Qualität und Partnerschaft seit 1883.</p>
-            </div>
-            <div class="footer-col">
-                <h5>Navigation</h5>
-                <ul>
-                    <li><a href="/#geschichte">Über uns</a></li>
-                    <li><a href="/#produkte">Produkte</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/#kontakt">Kontakt</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Produkte</h5>
-                <ul>
-                    <li><a href="/#produkte">Trinitario Kakao</a></li>
-                    <li><a href="/#produkte">Arabica Kaffee</a></li>
-                    <li><a href="/#produkte">Hass Avocados</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Rechtliches</h5>
-                <ul>
-                    <li><a href="/impressum">Impressum</a></li>
-                    <li><a href="/datenschutz">Datenschutz</a></li>
-                    <li><a href="/datenschutz#cookies">Cookie-Einstellungen</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Gauss Export Dominicana E.I.R.L. &mdash; Alle Rechte vorbehalten.</span>
-            <nav class="footer-legal-links" aria-label="Rechtliche Links">
-                <a href="/impressum">Impressum</a>
-                <a href="/datenschutz">Datenschutz</a>
-            </nav>
-        </div>
-    </footer>
+<footer class="footer" aria-label="Seitenfooter">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://cdn.marblism.com/_2YtWW7TNgu.png" alt="Santana Fruits" />
+      <p>Direktimport von erstklassigem Kakao, Kaffee und Avocados aus der Dominikanischen Republik. Transparenz, Qualität und Partnerschaft seit 1883.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/#geschichte">Über uns</a></li>
+        <li><a href="/#produkte">Produkte</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Produkte</h5>
+      <ul>
+        <li><a href="/#produkte">Trinitario Kakao</a></li>
+        <li><a href="/#produkte">Arabica Kaffee</a></li>
+        <li><a href="/#produkte">Hass Avocados</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <ul>
+        <li><a href="/impressum">Impressum</a></li>
+        <li><a href="/datenschutz">Datenschutz</a></li>
+        <li><a href="/datenschutz#cookies">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Gauss Export Dominicana E.I.R.L. &mdash; Alle Rechte vorbehalten.</span>
+    <nav class="footer-legal-links" aria-label="Rechtliche Links">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
 
-    <script>
+<script>
 
-        // Hamburger
-        const burger = document.getElementById('nav-burger');
-        const links = document.getElementById('nav-links');
-        if (burger && links) {
-            burger.addEventListener('click', () => {
-                const open = burger.classList.toggle('open');
-                links.classList.toggle('open', open);
-                burger.setAttribute('aria-expanded', open);
-                document.body.style.overflow = open ? 'hidden' : '';
-            });
-            links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-                burger.classList.remove('open');
-                links.classList.remove('open');
-                document.body.style.overflow = '';
-                burger.setAttribute('aria-expanded', 'false');
-            }));
-        }
+// Hamburger
+const burger = document.getElementById('nav-burger');
+const links  = document.getElementById('nav-links');
+if (burger && links) {
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    links.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    links.classList.remove('open');
+    document.body.style.overflow = '';
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+}
 
-        // ── Filter
-        function doFilter(btn, cat) {
-            document.querySelectorAll('.fp').forEach(b => b.classList.remove('fa', 'fj', 'fe'));
-            const map = { all: 'fa', journey: 'fj', expertise: 'fe' };
-            btn.classList.add(map[cat] || 'fa');
+// ── Filter
+function doFilter(btn, cat) {
+  document.querySelectorAll('.fp').forEach(b => b.classList.remove('fa','fj','fe'));
+  const map = { all:'fa', journey:'fj', expertise:'fe' };
+  btn.classList.add(map[cat] || 'fa');
 
-            // Cards
-            document.querySelectorAll('.card').forEach(c => {
-                c.classList.toggle('card--hidden', cat !== 'all' && c.dataset.cat !== cat);
-            });
+  // Cards
+  document.querySelectorAll('.card').forEach(c => {
+    c.classList.toggle('card--hidden', cat !== 'all' && c.dataset.cat !== cat);
+  });
 
-            // Section headers: hide if all their cards are hidden
-            document.querySelectorAll('.grid--section').forEach(sec => {
-                const visible = [...sec.querySelectorAll('.card')].some(c => !c.classList.contains('card--hidden'));
-                sec.style.display = visible ? '' : 'none';
-            });
-        }
-    </script>
-
+  // Section headers: hide if all their cards are hidden
+  document.querySelectorAll('.grid--section').forEach(sec => {
+    const visible = [...sec.querySelectorAll('.card')].some(c => !c.classList.contains('card--hidden'));
+    sec.style.display = visible ? '' : 'none';
+  });
+}
+</script>
 </body>
-
-<a href="artikel/saturn-moment.html">
-    <h2>2009 im Saturn: Der Moment, der alles veränderte</h2>
-</a>
-
 </html>
