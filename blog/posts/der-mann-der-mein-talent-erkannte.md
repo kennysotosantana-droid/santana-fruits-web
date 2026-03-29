@@ -3,14 +3,14 @@ title: "Der Mann, der mein Talent erkannte – Andreas Stachorski"
 date: "2026-03-28"
 category: "Kennys Reise"
 author: "Kenny"
-hero_image: "/blog/assets/images/kenny-andreas-title.webp"
+hero_image: "/blog/assets/images/people/kenny-andreas-title.webp"
 excerpt: "Ein einziger Satz zwischen Regalen voller Fernseher und Laptops veränderte alles. Wie mein Nachbar Andreas Stachorski mir den Spiegel vorhielt – und warum ich ihm bis heute dankbar bin."
 keywords: ["Mentor", "Führung", "Santana Fruits", "Vertrieb", "Unternehmertum", "Andreas Stachorski"]
 ---
 
 # Der Mann, der mein Talent erkannte – Andreas Stachorski
 
-![Kenny und Andreas – Der Mentor-Moment](/blog/assets/images/kenny-andreas-title.webp)
+![Kenny und Andreas – Der Mentor-Moment](/blog/assets/images/people/kenny-andreas-title.webp)
 
 Erinnerst du dich an diesen einen Moment in deinem Leben, in dem ein einziger Satz alles verändert hat? Nicht, weil er besonders kompliziert war, sondern weil er eine Wahrheit aussprach, die du selbst zwar tief in dir gespürt, aber nie gewagt hattest, laut zu formulieren?
 
@@ -26,7 +26,7 @@ Ich liebte die Dynamik. Ich liebte es, Probleme zu lösen. Aber der Einzelhandel
 
 Anstatt mich in mein Büro zurückzuziehen und Pläne zu schmieden, tat ich das, was ich immer tat: Ich packte mit an. Ich stand mitten im Laden, zerriss Kartons, räumte Ware in die Regale und versuchte gleichzeitig, drei Kunden auf einmal den Weg zu den Kaffeemaschinen zu weisen. Ich war verschwitzt, ich war im Tunnel und ich war in meinem Element – oder zumindest dachte ich das.
 
-![Die Begegnung im MediaMarkt](/blog/assets/images/kenny-begegnung-stachorski.webp)
+![Die Begegnung im MediaMarkt](/blog/assets/images/people/kenny-begegnung-stachorski.webp)
 
 ## Die Begegnung mit Andreas Stachorski
 
@@ -38,7 +38,7 @@ Schließlich kam er auf mich zu. Ich erwartete ein kurzes „Hallo" oder viellei
 
 **„Kenny, was machst du hier eigentlich? Du verschwendest dein Talent."**
 
-![Vision und Erkenntnis](/blog/assets/images/kenny-andreas-mentoring.webp)
+![Vision und Erkenntnis](/blog/assets/images/people/kenny-andreas-mentoring.webp)
 
 ## Ein Spiegel, den ich nicht erwartet hatte
 
@@ -54,7 +54,7 @@ Dann kam der Punkt, der bei mir hängen blieb: seine Definition von echtem Vertr
 
 In diesem Moment wurde mir klar, dass ich mich in einer Komfortzone eingerichtet hatte, die sich zwar nach Erfolg anfühlte, aber eigentlich eine Sackgasse für meine größeren Träume war. Die Vision von **Santana Fruits**, von der eigenen Produktion in der Dominikanischen Republik, vom direkten Import – all das war damals noch ein ferner Nebel. Aber Andreas hatte den ersten Stein ins Rollen gebracht, der diesen Nebel lichtete.
 
-![Spiegel der Erkenntnis](/blog/assets/images/kenny-spiegel-erkenntnis.webp)
+![Spiegel der Erkenntnis](/blog/assets/images/people/kenny-spiegel-erkenntnis.webp)
 
 ## Die Erkenntnis: Einzelhandel vs. aktiver Vertrieb
 

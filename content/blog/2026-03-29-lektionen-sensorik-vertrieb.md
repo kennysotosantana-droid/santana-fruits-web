@@ -3,14 +3,14 @@ title: "Vom Verkaufsraum auf die Straße: Meine Lektionen im harten Sensorik-Ver
 date: "2026-03-29"
 category: "Kennys Reise"
 author: "Kenny"
-hero_image: "/blog/assets/images/kenny-sales-profi.jpeg"
+hero_image: "/blog/assets/images/people/kenny-sales-profi.jpeg"
 excerpt: "Vom wütenden Reklamationskunden zum Außendienstprofi: Wie meine Zeit bei IBA-Sensorik das Fundament für Santana Fruits gelegt hat."
 keywords: ["Vertrieb", "Sensorik", "Außendienst", "Santana Fruits", "Unternehmertum", "Kennys Reise", "Rohkakao kaufen", "Trinitario Kakaobohnen"]
 ---
 
 # Vom Verkaufsraum auf die Straße: Meine Lektionen im harten Sensorik-Vertrieb
 
-![Kenny Sales Profi](/blog/assets/images/kenny-sales-profi.jpeg)
+![Kenny Sales Profi](/blog/assets/images/people/kenny-sales-profi.jpeg)
 
 ## Einleitung: Der echte Vertrieb beginnt außerhalb der Komfortzone
 
