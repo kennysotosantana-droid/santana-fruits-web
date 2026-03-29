@@ -229,17 +229,17 @@ CEO, Santana Fruits
 
 ## Call to Action
 
-Du suchst einen zuverlässigen Partner für:
+Du suchst einen zuverlässigen Partner?
 
-- Rohkakao kaufen
-- Trinitario Kakaobohnen
-- Kakao aus der Dominikanischen Republik
-- Direct Trade Kakao
+Für Rohkakao, Trinitario Kakaobohnen, Rohkaffee und Avocados im Direct Trade aus der Dominikanischen Republik.
 
-📩 Schreib uns direkt für Container-Anfragen (bis zu 25 Tonnen/Monat):
+📩 Schreib uns direkt für Container-Anfragen (bis zu 25 Tonnen/Monat).
 
 **Santana Fruits – vom Ursprung bis zu dir.**
 
 ---
 
 *Dieser Blogbeitrag ist Teil meiner persönlichen Serie über den Aufbau von Santana Fruits. Jeden Sonntag um 19:00 Uhr teile ich ein neues Kapitel meiner Reise mit euch.*
+
+
+
