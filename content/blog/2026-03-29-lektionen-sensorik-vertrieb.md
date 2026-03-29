@@ -3,14 +3,14 @@ title: "Vom Verkaufsraum auf die Straße: Meine Lektionen im harten Sensorik-Ver
 date: "2026-03-29"
 category: "Kennys Reise"
 author: "Kenny"
-hero_image: "https://cdn.marblism.com/8064d25d-226a-4634-9e4c-3279153709b6/kenny-technical-sales-sensor-technology.webp"
+hero_image: "./Kenny-Sales-Profi.jpeg"
 excerpt: "Vom wütenden Reklamationskunden zum Außendienstprofi: Wie meine Zeit bei IBA-Sensorik das Fundament für Santana Fruits gelegt hat."
 keywords: ["Vertrieb", "Sensorik", "Außendienst", "Santana Fruits", "Unternehmertum", "Kennys Reise"]
 ---
 
 # Vom Verkaufsraum auf die Straße: Meine Lektionen im harten Sensorik-Vertrieb
 
-![Kenny als technischer Vertriebsexperte](https://cdn.marblism.com/8064d25d-226a-4634-9e4c-3279153709b6/kenny-technical-sales-sensor-technology.webp)
+![Kenny als technischer Vertriebsexperte](./Kenny-Sales-Profi.jpeg)
 
 Willkommen zurück zu meiner Reise. In den letzten Teilen habe ich euch erzählt, wie meine Zeit bei Saturn meinen Blick auf die Welt verändert hat und wie ich mich durch die Weiterbildung zum Handelsfachwirt und die Führungsposition bei MediaMarkt in Esslingen auf das Unternehmertum vorbereitet habe. Doch es gab einen entscheidenden Bereich, den ich noch meistern musste, bevor **Santana Fruits** überhaupt Realität werden konnte: den echten, harten Vertrieb im Außendienst.
 
@@ -28,7 +28,7 @@ Dieser Kunde war der Geschäftsführer von IBA-Sensorik. Eine völlig andere Wel
 
 ## Warum der Vertrieb das Rückgrat von Santana Fruits ist
 
-![Kenny als Experte für Qualität und Vertrieb](https://cdn.marblism.com/8064d25d-226a-4634-9e4c-3279153709b6/kenny-technical-sales-sensor-technology.webp)
+![Kenny als Experte für Qualität und Vertrieb](./Kenny-Sales-Profi.jpeg)
 
 Viele Menschen fragen mich, warum ich als CEO so viel Wert auf den direkten Kontakt lege. Die Antwort liegt in diesen ersten Schritten im Außendienst. Ich habe gelernt, dass man ein Unternehmen nicht nur vom Schreibtisch aus führen kann. Man muss wissen, wie der Markt atmet.
 
